@@ -1,0 +1,86 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "354dda32d89fc8cd4f5c46487f64957d355f53d8",
+        "version" : "5.6.1"
+      }
+    },
+    {
+      "identity" : "alamofireeventsource",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/famousj/AlamofireEventSource",
+      "state" : {
+        "revision" : "375128bdd9d78b8189cedb5e71fcf3188a824915",
+        "version" : "1.2.2"
+      }
+    },
+    {
+      "identity" : "bigint",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:attaswift/BigInt.git",
+      "state" : {
+        "revision" : "0ed110f7555c34ff468e72e1686e59721f2b0da6",
+        "version" : "5.3.0"
+      }
+    },
+    {
+      "identity" : "murmurhash-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:daisuke-t-jp/MurmurHash-Swift.git",
+      "state" : {
+        "revision" : "7e69bedaaaea09673524d83de12dac6e09d5b74a",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "parity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/famousj/Parity",
+      "state" : {
+        "revision" : "2fac6468c68b6cd98cc695de78fed6b3143b5521",
+        "version" : "2.4.0"
+      }
+    },
+    {
+      "identity" : "swiftgraphstore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/famousj/SwiftGraphStore.git",
+      "state" : {
+        "revision" : "811e810a14b89c2cbf3f510218706e02d1506405",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "ursusatom",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:famousj/UrsusAtom.git",
+      "state" : {
+        "revision" : "f36534840d79117c9f00a85f1c51ff35ce8d85da",
+        "version" : "1.2.6"
+      }
+    },
+    {
+      "identity" : "ursushttp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/famousj/UrsusHTTP",
+      "state" : {
+        "revision" : "715f08c682f7fe1db377cfecff2db5e347ace8c6",
+        "version" : "1.10.3"
+      }
+    },
+    {
+      "identity" : "valet",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Square/Valet",
+      "state" : {
+        "revision" : "2bf3329055f5d71d42a12801dd69d1d770fafa5e",
+        "version" : "4.1.2"
+      }
+    }
+  ],
+  "version" : 2
+}
