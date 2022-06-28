@@ -1,29 +1,46 @@
 # Funes Notes
 
-Notes for iOS, stored on your Urbit ship
+Everyone says, “on Urbit, you own your own data”.  But until now, everyone has been limited to the same kind of web-based front-end.  And as cool as Urbit apps are, they’re pretty limited in terms of getting data into and out of your ship.
 
-## Requirements
+We are hopeful that this app will be useful to everyone, and the first step in creating new ways of interacting with your ship and your data.
 
-- An Urbit ship.  Really any ship will work: planet, comet, fakezod,
-  galaxy.  All you need is to be running over HTTPS.  If you need
-  assistance in doing that, [go here for instructions](https://urbit.org/using/os/basics#configuring-ssl)
-- You should have all the latest updates installed.  This app saves your
-  data to Graph Store.  It's tested on the latest version of Graph
-  Store.  While it will possibly work just fine on older versions, I
-  wouldn't bet on it.
+## Installation
 
-## Troubleshooting
+### Easy Mode
 
-If the app seems to be in a weird state, here are some things to try:
+[Install from the App Store](https://apps.apple.com/us/app/funes-notes/id1627315560)
 
-- Bring up the list of notes, and pull down.  This will force the list
-  of notes to sync up with Graph Store.
+### Hard Mode
 
-- Also, please let me know about this!  Send a DM to ~ribben-donnyl,
-  post something about it in the group, send a carrier pigeon.
+The code repo is here.  Build in Xcode and run on your device.
 
+[https://github.com/funes-app/FunesNotes](https://github.com/funes-app/FunesNotes)
 
-- The group is:
-```
-~ribben-donnyl/funes
-```
+## What you’ll need
+
+###   iPhone/iPad
+
+Android people: sorry. Check back next year. 
+### An Urbit ship
+
+This can be any ship: planet, moon, comet, a galaxy. The current version doesn't require being on the Urbit network, so you could use even use a fakezod if you want to.
+ ### A URL
+
+Your Urbit ship has to be accessible to the outside world. You can use an IP address, or [setup a domain to point to your ship](https://urbit.org/using/running/hosting#getting-your-own-domain)
+
+Unfortunately this probably excludes people running their ship on Port.  We’re trying to figure out a workaround on that.  Stay tuned.
+
+In the meantime, you can use this as an excuse to move your ship to a server.  [Instructions for setting up a server here](https://urbit.org/using/running/hosting).
+  
+### An HTTPS connection
+
+Apple won't let an app open a connection without HTTPS, so you need to set that up for your ship. [Go here for instructions](https://urbit.org/using/os/basics#configuring-ssl).
+
+## Getting Help
+
+There’s a group for Funes Notes, to get help and discuss.  Go here to join:
+
+[~ribben-donnyl/funes](web+urbitgraph://group/~ribben-donnyl/funes)
+
+You can also just DM ~ribben-donnyl, who will get right back to you.
+
