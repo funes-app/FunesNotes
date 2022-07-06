@@ -11,16 +11,8 @@ struct NoteEditView: View {
     
     var body: some View {
         VStack {
-            TextEditor(text: viewModel.text)
-                .keyboardType(.default)
-                .font(textEditorFont)
-                .padding()
+            NoteEditor(text: viewModel.text)
                 .focused($isTextEditorFocused)
-                .onAppear {
-                    Task {
-                        await self.viewModel.focusOnTextEditWithDelay()
-                    }
-                }
             
             Divider()
             
@@ -36,6 +28,11 @@ struct NoteEditView: View {
         .sheet(isPresented: $viewModel.isSharePresented, content: {
             ActivityViewController(activityItems: [viewModel.noteContentsBeingEdited.text])
         })
+        .onAppear {
+            Task {
+                await self.viewModel.focusOnTextEditWithDelay()
+            }
+        }
         .onChange(of: isTextEditorFocused) { self.viewModel.isTextEditorFocused = $0 }
         .onChange(of: viewModel.isTextEditorFocused) { self.isTextEditorFocused = $0 }
         .navigationBarTitleDisplayMode(.inline)
