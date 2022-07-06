@@ -351,8 +351,8 @@
 				D8C0279427D14DE0004DB210 /* GraphSetupStatus.swift */,
 				D808E0C22797625B009168DE /* GraphStoreIndex.swift */,
 				D8417FE027FDA74E007665EF /* NoteGraphStatus.swift */,
-				D8B2B1E32825586500C40F9A /* SynchronizerSetupStatus.swift */,
 				D8D1BEC4284518B1007114C7 /* SynchronizerActivityStatus.swift */,
+				D8B2B1E32825586500C40F9A /* SynchronizerSetupStatus.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -379,6 +379,7 @@
 		D8374410277F53E7009FEF71 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D815021D284D619800F93595 /* AppViewModeling.swift */,
 				D8BE7DE82833DCD6008AC2C8 /* CredentialStoring.swift */,
 				D8213710280DD86200DF587C /* DirectoryChangeMonitoring.swift */,
 				D823DBCC2755CAB10037C3D2 /* FileConnecting.swift */,
@@ -394,7 +395,6 @@
 				D8B1EB7E27C473B100878471 /* NoteGraphRevisionManaging.swift */,
 				D86183D9277CA7C3006FB1AC /* ShipSessioning.swift */,
 				D883F88E283693E600F6C75D /* ValetSaving.swift */,
-				D815021D284D619800F93595 /* AppViewModeling.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -415,8 +415,8 @@
 				D808E0BA27961C28009168DE /* NoteContents+Post.swift */,
 				D808E0BC27971866009168DE /* NoteMeta+Post.swift */,
 				D8724CB627AAE800008F76F1 /* Post+Helpers.swift */,
-				D84688B2275ACA83009DA16E /* UserDefaults+values.swift */,
 				D880E6FC278A08C4005FE545 /* URL+Helpers.swift */,
+				D84688B2275ACA83009DA16E /* UserDefaults+values.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -558,16 +558,16 @@
 				D8374410277F53E7009FEF71 /* Protocols */,
 				D84688B1275ACA3E009DA16E /* Utilities */,
 				D8FE19672752A3630007EDA7 /* Codable+FileIO.swift */,
-				D8213712280DDC5B00DF587C /* DirectoryChangeMonitor.swift */,
 				D883F8872835487E00F6C75D /* CredentialStore.swift */,
+				D8213712280DDC5B00DF587C /* DirectoryChangeMonitor.swift */,
 				D823DBCA2755CA3D0037C3D2 /* FileConnector.swift */,
 				D8B1EB7327BD698C00878471 /* GraphConfigurationState.swift */,
-				D8DD4345283EBF5500B932B2 /* NoteGraphConnector.swift */,
 				D89E2F4727BAB741008CD989 /* GraphStoreAsyncInterface.swift */,
 				D8417FDE27FD9FCB007665EF /* GraphStoreSync.swift */,
 				D8213716280DED9000DF587C /* MetadataChangeMonitor.swift */,
 				D876782C2735C03100C57FC5 /* NoteContents.swift */,
 				D87678302735CA3E00C57FC5 /* NoteFileManager.swift */,
+				D8DD4345283EBF5500B932B2 /* NoteGraphConnector.swift */,
 				D8B1EB7727BEEB2A00878471 /* NoteGraphCreator.swift */,
 				D89E2F5B27BC5E24008CD989 /* NoteGraphManager.swift */,
 				D8B1EB7B27C4738500878471 /* NoteGraphRevisionManager.swift */,
@@ -582,11 +582,11 @@
 		D876784E273818D400C57FC5 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				D8EE278927679C2400479425 /* NoteFileError.swift */,
 				D85EF374278DD31600D74405 /* ConnectionError.swift */,
 				D8409CDC281D670A00A77301 /* GraphStoreError.swift */,
 				D89E2F5127BBC720008CD989 /* GraphStoreReadError.swift */,
 				D89E2F5327BBEB5B008CD989 /* GraphStoreSaveError.swift */,
+				D8EE278927679C2400479425 /* NoteFileError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -1091,6 +1091,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FunesNotes-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Funes Notes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1129,6 +1130,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FunesNotes-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Funes Notes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
