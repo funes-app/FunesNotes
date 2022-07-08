@@ -31,7 +31,14 @@ class LoginViewModel: ObservableObject {
     @Published var key: String = ""
     
     var urlAsURL: URL? {
-        URL(string: url)
+        guard let url = URL(string: url),
+              var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+            return nil
+        }
+        
+        components.path = ""
+        
+        return components.url
     }
     
     var keyAsPatP: PatP? {

@@ -31,6 +31,26 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertNil(testObject.urlAsURL)
     }
     
+    func test_urlAsUrl_removesTrailingSlash() throws {
+        let url = "https://funes.app/"
+                
+        let testObject = LoginViewModel()
+        testObject.url = url
+        
+        let expectedURL = URL(string: "https://funes.app")
+        XCTAssertEqual(testObject.urlAsURL, expectedURL)
+    }
+    
+    func test_urlAsUrl_removesEverythingAfterHostname() throws {
+        let url = "https://funes.app/plus/some/path.jpg"
+                
+        let testObject = LoginViewModel()
+        testObject.url = url
+        
+        let expectedURL = URL(string: "https://funes.app")
+        XCTAssertEqual(testObject.urlAsURL, expectedURL)
+    }
+    
     func test_keyAsPatP_whenValid_returnsPatP() throws {
         let key = "sampel-palnet"
                 
