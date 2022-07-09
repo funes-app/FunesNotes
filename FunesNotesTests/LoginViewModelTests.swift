@@ -31,6 +31,17 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertNil(testObject.urlAsURL)
     }
     
+    func test_urlAsUrl_trimsWhitespace() throws {
+        let url = "\t   \thttps://funes.app\t\t  \t"
+                
+        let testObject = LoginViewModel()
+        testObject.url = url
+        
+        let expectedURL = URL(string: "https://funes.app")
+        XCTAssertEqual(testObject.urlAsURL, expectedURL)
+    }
+    
+
     func test_urlAsUrl_removesTrailingSlash() throws {
         let url = "https://funes.app/"
                 
