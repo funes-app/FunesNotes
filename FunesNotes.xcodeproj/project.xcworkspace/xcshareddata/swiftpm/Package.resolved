@@ -55,6 +55,15 @@
       }
     },
     {
+      "identity" : "textview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUI-Plus/TextView.git",
+      "state" : {
+        "revision" : "964843d9d745e9face81622958c787832553d200",
+        "version" : "1.1.0"
+      }
+    },
+    {
       "identity" : "ursusatom",
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:famousj/UrsusAtom.git",
