@@ -11,8 +11,10 @@ struct NoteEditView: View {
     
     var body: some View {
         VStack {
-            NoteEditor(text: viewModel.text)
-                .focused($isTextEditorFocused)
+            ScrollView {
+                NoteEditor(text: viewModel.text)
+                    .focused($isTextEditorFocused)
+            }
             
             Divider()
             
@@ -43,7 +45,10 @@ struct NoteEditView: View {
 struct NoteEditView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = NoteEditViewModel(fileConnector: FileConnector())
-        viewModel.noteContentsBeingEdited = NoteContents(text: "This is some text")
+        let text = (1...30)
+            .map { i in "Line \(i)"}
+            .joined(separator: "\n")
+        viewModel.noteContentsBeingEdited = NoteContents(text: text)
         
         return NoteEditView(viewModel: viewModel)
     }

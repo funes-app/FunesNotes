@@ -37,6 +37,7 @@
 		D823DBD12755D24D0037C3D2 /* FakeFileConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D823DBD02755D24D0037C3D2 /* FakeFileConnector.swift */; };
 		D825A8CD276D88CD002040C0 /* ArrayNoteMeta+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D825A8CC276D88CD002040C0 /* ArrayNoteMeta+Helpers.swift */; };
 		D825A8CF276D8981002040C0 /* ArrayNoteMetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D825A8CE276D8981002040C0 /* ArrayNoteMetaTests.swift */; };
+		D828E360287C9FB20053411E /* TextView in Frameworks */ = {isa = PBXBuildFile; productRef = D828E35F287C9FB20053411E /* TextView */; };
 		D8368EA5285668E500C9576D /* metadata-noTitle.json in Resources */ = {isa = PBXBuildFile; fileRef = D8368EA4285668E500C9576D /* metadata-noTitle.json */; };
 		D8374412277F54DA009FEF71 /* ShipSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8374411277F54DA009FEF71 /* ShipSessionTests.swift */; };
 		D840831F284021DD006B08B0 /* FakeNoteGraphConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840831E284021DD006B08B0 /* FakeNoteGraphConnector.swift */; };
@@ -322,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D828E360287C9FB20053411E /* TextView in Frameworks */,
 				D8DD4342283D0CCD00B932B2 /* Valet in Frameworks */,
 				D8C9ED1627FB29FD00C7A0D6 /* SwiftGraphStore in Frameworks */,
 				D8C9ED1827FB29FD00C7A0D6 /* SwiftGraphStoreFakes in Frameworks */,
@@ -401,13 +403,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		D83744182780F047009FEF71 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		D84688B1275ACA3E009DA16E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +440,6 @@
 		D87677EF273461C300C57FC5 = {
 			isa = PBXGroup;
 			children = (
-				D83744182780F047009FEF71 /* Packages */,
 				D87677FA273461C400C57FC5 /* FunesNotes */,
 				D876780B273461CC00C57FC5 /* FunesNotesTests */,
 				D8767815273461CD00C57FC5 /* FunesNotesUITests */,
@@ -667,6 +661,7 @@
 				D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */,
 				D8C9ED1727FB29FD00C7A0D6 /* SwiftGraphStoreFakes */,
 				D8DD4341283D0CCD00B932B2 /* Valet */,
+				D828E35F287C9FB20053411E /* TextView */,
 			);
 			productName = FunesNotes;
 			productReference = D87677F8273461C400C57FC5 /* FunesNotes.app */;
@@ -745,6 +740,7 @@
 			packageReferences = (
 				D8C9ED1427FB29FD00C7A0D6 /* XCRemoteSwiftPackageReference "SwiftGraphStore" */,
 				D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */,
+				D828E35E287C9FB20053411E /* XCRemoteSwiftPackageReference "TextView" */,
 			);
 			productRefGroup = D87677F9273461C400C57FC5 /* Products */;
 			projectDirPath = "";
@@ -1298,6 +1294,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D828E35E287C9FB20053411E /* XCRemoteSwiftPackageReference "TextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUI-Plus/TextView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Square/Valet";
@@ -1317,6 +1321,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D828E35F287C9FB20053411E /* TextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D828E35E287C9FB20053411E /* XCRemoteSwiftPackageReference "TextView" */;
+			productName = TextView;
+		};
 		D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D8C9ED1427FB29FD00C7A0D6 /* XCRemoteSwiftPackageReference "SwiftGraphStore" */;

@@ -1,15 +1,19 @@
 import SwiftUI
+import TextView
 
 struct NoteEditor: View {
-    private var font: Font {
-        .custom("AnonymousPro-Regular", fixedSize: 18)
+    private var font: UIFont {
+        UIFont(name: "AnonymousPro-Regular", size: 18)!
     }
 
     var text: Binding<String>
     var body: some View {
-        TextEditor(text: text)
-            .keyboardType(.default)
+        let view: TextView = TextView(text)
             .font(font)
+        
+        return view
+            .keyboardType(.default)
+            .multilineTextAlignment(.leading)
             .padding()
     }
 }
@@ -17,6 +21,10 @@ struct NoteEditor: View {
 
 struct NoteEditor_Previews: PreviewProvider {
     static var previews: some View {
-        NoteEditor(text: .constant("This is a note right here"))
+        let text = """
+        Here's one line
+        Here's another line
+        """
+        NoteEditor(text: .constant(text))
     }
 }
