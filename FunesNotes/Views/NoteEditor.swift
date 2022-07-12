@@ -8,6 +8,7 @@ struct NoteEditor: View {
     var text: Binding<String>
     var body: some View {
         let view: TextView = TextView(text)
+            .font(font)
         
         return view
             .keyboardType(.default)

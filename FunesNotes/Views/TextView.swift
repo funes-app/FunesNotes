@@ -3,13 +3,15 @@ import SwiftUI
 
 struct TextView: View {
     @Binding private var text: String
+    var font: UIFont = .preferredFont(forTextStyle: .body)
     
     init(_ text: Binding<String>) {
         _text = text
     }
     
     var body: some View {
-        Representable(text: $text)
+        Representable(text: $text,
+                      font: font)
     }
 }
 
@@ -19,14 +21,14 @@ extension TextView {
         private let font: UIFont
         
         init(text: Binding<String>,
-             font: UIFont = .preferredFont(forTextStyle: .body)) {
+             font: UIFont) {
             _text = text
             self.font = font
         }
         
         func makeUIView(context: Context) -> UITextView {
             let view = UITextView()
-            view.font = .preferredFont(forTextStyle: .body)
+            view.font = font
             view.delegate = context.coordinator
             return view
         }
@@ -55,9 +57,10 @@ extension TextView {
     }
 }
 
-//extension TextView {
-//    func font(_ uiFont: UIFont) -> TextView {
-//
-//    }
-//}
-
+extension TextView {
+    func font(_ font: UIFont) -> TextView {
+        var view = self
+        view.font = font
+        return view
+    }
+}
