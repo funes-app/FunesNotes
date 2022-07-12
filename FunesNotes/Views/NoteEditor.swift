@@ -1,5 +1,4 @@
 import SwiftUI
-import TextView
 
 struct NoteEditor: View {
     private var font: UIFont {
@@ -9,7 +8,6 @@ struct NoteEditor: View {
     var text: Binding<String>
     var body: some View {
         let view: TextView = TextView(text)
-            .font(font)
         
         return view
             .keyboardType(.default)
@@ -22,9 +20,18 @@ struct NoteEditor: View {
 struct NoteEditor_Previews: PreviewProvider {
     static var previews: some View {
         let text = """
-        Here's one line
-        Here's another line
-        """
+# Headline
+
+## Subhead
+        
+Here's a _line_ with some **bolded** stuff
+
+~~This should be struck through~~
+
+- Item 1
+- Item 2
+- Item 3
+"""
         NoteEditor(text: .constant(text))
     }
 }

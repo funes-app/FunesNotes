@@ -128,6 +128,7 @@
 		D8BFC76A2773C2B100E53E25 /* NoteListRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BFC7692773C2B100E53E25 /* NoteListRowButton.swift */; };
 		D8C0279527D14DE0004DB210 /* GraphSetupStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0279427D14DE0004DB210 /* GraphSetupStatus.swift */; };
 		D8C2790D276BEB51007F9739 /* XCTestCase+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2790C276BEB51007F9739 /* XCTestCase+Async.swift */; };
+		D8C707B1287E037800D9E265 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C707B0287E037800D9E265 /* TextView.swift */; };
 		D8C9ED1627FB29FD00C7A0D6 /* SwiftGraphStore in Frameworks */ = {isa = PBXBuildFile; productRef = D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */; };
 		D8C9ED1827FB29FD00C7A0D6 /* SwiftGraphStoreFakes in Frameworks */ = {isa = PBXBuildFile; productRef = D8C9ED1727FB29FD00C7A0D6 /* SwiftGraphStoreFakes */; };
 		D8CD88D02769421500869DB8 /* NoteEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD88CF2769421500869DB8 /* NoteEditViewModel.swift */; };
@@ -295,6 +296,7 @@
 		D8BFC7692773C2B100E53E25 /* NoteListRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRowButton.swift; sourceTree = "<group>"; };
 		D8C0279427D14DE0004DB210 /* GraphSetupStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphSetupStatus.swift; sourceTree = "<group>"; };
 		D8C2790C276BEB51007F9739 /* XCTestCase+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Async.swift"; sourceTree = "<group>"; };
+		D8C707B0287E037800D9E265 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		D8CD88CF2769421500869DB8 /* NoteEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewModel.swift; sourceTree = "<group>"; };
 		D8CD88D52769838F00869DB8 /* NoteEditViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditViewModeling.swift; sourceTree = "<group>"; };
 		D8CD88D72769840800869DB8 /* FakeNoteEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNoteEditViewModel.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				D86B267D273C365300CB3DFD /* NoteListView.swift */,
 				D81FFD8C28463D3B0052DABD /* NoteListViewFooter.swift */,
 				D8B4F6C9285784B9002D325F /* SigilImage.swift */,
+				D8C707B0287E037800D9E265 /* TextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				D876782D2735C03200C57FC5 /* NoteContents.swift in Sources */,
 				D80CB2D5286CAE2F00CE5E63 /* NoteEditor.swift in Sources */,
 				D8B4F6CA285784B9002D325F /* SigilImage.swift in Sources */,
+				D8C707B1287E037800D9E265 /* TextView.swift in Sources */,
 				D883F88F283693E600F6C75D /* ValetSaving.swift in Sources */,
 				D87678312735CA3E00C57FC5 /* NoteFileManager.swift in Sources */,
 				D86C0B03275FE5560081E9DB /* NoteListRowViewModel.swift in Sources */,
