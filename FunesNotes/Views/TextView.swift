@@ -14,6 +14,7 @@ struct TextView: UIViewRepresentable {
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
         textView.font = font
+        textView.delegate = context.coordinator
         return textView
     }
     
