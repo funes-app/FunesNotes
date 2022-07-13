@@ -11,10 +11,8 @@ struct NoteEditView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                NoteEditor(text: viewModel.text)
-                    .focused($isTextEditorFocused)
-            }
+            NoteEditor(text: viewModel.text)
+                .focused($isTextEditorFocused)
             
             Divider()
             
