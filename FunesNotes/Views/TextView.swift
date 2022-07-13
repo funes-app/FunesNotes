@@ -1,45 +1,28 @@
 import Foundation
 import SwiftUI
 
-struct TextView: View {
+struct TextView: UIViewRepresentable {
     @Binding private var text: String
-    var font: UIFont = .preferredFont(forTextStyle: .body)
+    private var font: UIFont
     
-    init(_ text: Binding<String>) {
+    init(_ text: Binding<String>,
+         font: UIFont = .preferredFont(forTextStyle: .body)) {
         _text = text
+        self.font = font
     }
     
-    var body: some View {
-        Representable(text: $text,
-                      font: font)
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        textView.font = font
+        return textView
     }
-}
-
-extension TextView {
-    struct Representable: UIViewRepresentable {
-        @Binding var text: String
-        private let font: UIFont
-        
-        init(text: Binding<String>,
-             font: UIFont) {
-            _text = text
-            self.font = font
-        }
-        
-        func makeUIView(context: Context) -> UITextView {
-            let view = UITextView()
-            view.font = font
-            view.delegate = context.coordinator
-            return view
-        }
-
-        func updateUIView(_ view: UITextView, context: Context) {
-            view.text = text
-        }
-        
-        func makeCoordinator() -> Coordinator {
-            Coordinator(text: $text)
-        }
+    
+    func updateUIView(_ textView: UITextView, context: Context) {
+        textView.text = text
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(text: $text)
     }
 }
 
@@ -50,7 +33,7 @@ extension TextView {
         init(text: Binding<String>) {
             _text = text
         }
-
+        
         func textViewDidChange(_ textView: UITextView) {
             text = textView.text
         }
