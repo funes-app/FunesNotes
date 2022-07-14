@@ -33,6 +33,18 @@ class NoteContentsTests: XCTestCase {
         let empty = NoteContents(id: NoteId.testInstance, text: "still ignores text")
         XCTAssertEqual(empty.isEmpty, false)
     }
+    
+    func test_withUpdatedText_keepsIdAndReplacesText() {
+        let id = NoteId.testInstance
+        let text = UUID().uuidString
+        let contents = NoteContents(id: id, text: text)
+        
+        let updatedText = UUID().uuidString
+        let updatedContents = contents.withUpdatedText(updatedText)
+        
+        XCTAssertEqual(updatedContents.id, id)
+        XCTAssertEqual(updatedContents.text, updatedText)
+    }
 
     func test_encode() throws {
         let id = NoteId(123456)

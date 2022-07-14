@@ -6,8 +6,4 @@ extension NoteContents {
         return NoteContents(id: NoteId.testInstance,
                     text: UUID().uuidString)
     }
-    
-    func withUpdatedText(_ text: String = UUID().uuidString) -> NoteContents {
-        return NoteContents(id: self.id, text: text)
-    }
 }

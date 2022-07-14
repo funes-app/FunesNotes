@@ -32,4 +32,8 @@ extension NoteContents {
     var isEmpty: Bool {
         self.id == NoteId.empty
     }
+
+    func withUpdatedText(_ text: String = UUID().uuidString) -> NoteContents {
+        NoteContents(id: self.id, text: text)
+    }
 }
