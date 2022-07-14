@@ -85,11 +85,18 @@ class NoteEditViewModel: ObservableObject, NoteEditViewModeling {
     }
     
     func loadNoteContents(id: NoteId) {
-        noteContentsBeingEdited = fileConnector.loadNoteContents(id: id) ?? .empty
+        let contents = fileConnector.loadNoteContents(id: id) ?? .empty
+                
+        noteContentsBeingEdited = cleanupNoteContents(contents)
     }
     
     func delete() {
         deleteNoteContentsBeingEdited()
+    }
+    
+    private func cleanupNoteContents(_ contents: NoteContents) -> NoteContents {
+        let text = contents.text.replacingOccurrences(of: "\r", with: "")
+        return contents.withUpdatedText(text)
     }
 
     private func deleteNoteContentsBeingEdited() {

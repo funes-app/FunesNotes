@@ -3,6 +3,7 @@ import os
 
 struct NoteFileManager: NoteFileManaging {
     internal typealias FileURLCodable = FileURLNaming & Codable
+    internal typealias ItemDecoder<T: FileURLCodable> = (URL) throws -> T
     
     private let logger = Logger()
     
@@ -32,7 +33,17 @@ struct NoteFileManager: NoteFileManaging {
     }
     
     func loadNoteContents(id: NoteId) throws -> NoteContents? {
-        try loadItem(id: id)
+        try loadNoteContents(id: id,
+                             decoder: { try .init($0) })
+    }
+    
+    internal func loadNoteContents(id: NoteId,
+                                   decoder: ItemDecoder<NoteContents> ) throws -> NoteContents? {
+        guard let contents: NoteContents = try loadItem(id: id) else {
+            return nil
+        }
+        
+        return contents
     }
     
     func loadNoteMeta(id: NoteId) throws -> NoteMeta? {
@@ -40,7 +51,7 @@ struct NoteFileManager: NoteFileManaging {
     }
     
     internal func loadItem<T: FileURLCodable>(id: NoteId,
-                                              decoder: (URL) throws -> T = { try .init($0) }) throws -> T? {
+                                              decoder: ItemDecoder<T> = { try .init($0) }) throws -> T? {
         do {
             let fileURL = T.fileURL(id: id)
             return try decoder(fileURL)

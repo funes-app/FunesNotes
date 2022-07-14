@@ -258,6 +258,20 @@ class NoteEditViewModelTests: XCTestCase {
         XCTAssertEqual(fileConnector.delete_calledCount, 0)
     }
     
+    func test_loadNoteContents_removesLineFeedsFromContents() {
+        let fileConnector = FakeFileConnector()
+        let testObject = NoteEditViewModel(fileConnector: fileConnector)
+        
+        let text = "Text\rwith\rline\rfeeds"
+        let contents = NoteContents.testInstance.withUpdatedText(text)
+        fileConnector.loadNoteContents_returnContents = contents
+
+        testObject.loadNoteContents(id: NoteId.testInstance)
+
+        let expectedText = "Textwithlinefeeds"
+        XCTAssertEqual(testObject.noteContentsBeingEdited.text, expectedText)
+    }
+    
     func test_delete_deletesNoteContentsBeingEdited() {
         let fileConnector = FakeFileConnector()
         
