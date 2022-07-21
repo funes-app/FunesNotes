@@ -37,7 +37,6 @@
 		D823DBD12755D24D0037C3D2 /* FakeFileConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D823DBD02755D24D0037C3D2 /* FakeFileConnector.swift */; };
 		D825A8CD276D88CD002040C0 /* ArrayNoteMeta+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D825A8CC276D88CD002040C0 /* ArrayNoteMeta+Helpers.swift */; };
 		D825A8CF276D8981002040C0 /* ArrayNoteMetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D825A8CE276D8981002040C0 /* ArrayNoteMetaTests.swift */; };
-		D828E360287C9FB20053411E /* TextView in Frameworks */ = {isa = PBXBuildFile; productRef = D828E35F287C9FB20053411E /* TextView */; };
 		D8368EA5285668E500C9576D /* metadata-noTitle.json in Resources */ = {isa = PBXBuildFile; fileRef = D8368EA4285668E500C9576D /* metadata-noTitle.json */; };
 		D8374412277F54DA009FEF71 /* ShipSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8374411277F54DA009FEF71 /* ShipSessionTests.swift */; };
 		D840831F284021DD006B08B0 /* FakeNoteGraphConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D840831E284021DD006B08B0 /* FakeNoteGraphConnector.swift */; };
@@ -76,6 +75,7 @@
 		D870FCBA274346EE0091F5DA /* AnonymousPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D870FCB6274346EE0091F5DA /* AnonymousPro-BoldItalic.ttf */; };
 		D8724CB727AAE800008F76F1 /* Post+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8724CB627AAE800008F76F1 /* Post+Helpers.swift */; };
 		D8737D35273DD09B0063EAE6 /* AppViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8737D34273DD09B0063EAE6 /* AppViewModelTests.swift */; };
+		D873E59A2885D03D001C8B8A /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = D873E5992885D03D001C8B8A /* Highlightr */; };
 		D87677FC273461C400C57FC5 /* FunesNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87677FB273461C400C57FC5 /* FunesNotesApp.swift */; };
 		D8767800273461CA00C57FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D87677FF273461CA00C57FC5 /* Assets.xcassets */; };
 		D8767803273461CA00C57FC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8767802273461CA00C57FC5 /* Preview Assets.xcassets */; };
@@ -325,7 +325,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D828E360287C9FB20053411E /* TextView in Frameworks */,
+				D873E59A2885D03D001C8B8A /* Highlightr in Frameworks */,
 				D8DD4342283D0CCD00B932B2 /* Valet in Frameworks */,
 				D8C9ED1627FB29FD00C7A0D6 /* SwiftGraphStore in Frameworks */,
 				D8C9ED1827FB29FD00C7A0D6 /* SwiftGraphStoreFakes in Frameworks */,
@@ -664,7 +664,7 @@
 				D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */,
 				D8C9ED1727FB29FD00C7A0D6 /* SwiftGraphStoreFakes */,
 				D8DD4341283D0CCD00B932B2 /* Valet */,
-				D828E35F287C9FB20053411E /* TextView */,
+				D873E5992885D03D001C8B8A /* Highlightr */,
 			);
 			productName = FunesNotes;
 			productReference = D87677F8273461C400C57FC5 /* FunesNotes.app */;
@@ -743,7 +743,7 @@
 			packageReferences = (
 				D8C9ED1427FB29FD00C7A0D6 /* XCRemoteSwiftPackageReference "SwiftGraphStore" */,
 				D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */,
-				D828E35E287C9FB20053411E /* XCRemoteSwiftPackageReference "TextView" */,
+				D873E5982885D03C001C8B8A /* XCRemoteSwiftPackageReference "Highlightr" */,
 			);
 			productRefGroup = D87677F9273461C400C57FC5 /* Products */;
 			projectDirPath = "";
@@ -1298,12 +1298,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D828E35E287C9FB20053411E /* XCRemoteSwiftPackageReference "TextView" */ = {
+		D873E5982885D03C001C8B8A /* XCRemoteSwiftPackageReference "Highlightr" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUI-Plus/TextView.git";
+			repositoryURL = "https://github.com/raspu/Highlightr";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
+			};
+		};
+		D88C564A2889A1CB0055DB6A /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Sourceful";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
 			};
 		};
 		D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */ = {
@@ -1325,10 +1333,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D828E35F287C9FB20053411E /* TextView */ = {
+		D873E5992885D03D001C8B8A /* Highlightr */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D828E35E287C9FB20053411E /* XCRemoteSwiftPackageReference "TextView" */;
-			productName = TextView;
+			package = D873E5982885D03C001C8B8A /* XCRemoteSwiftPackageReference "Highlightr" */;
+			productName = Highlightr;
+		};
 		};
 		D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */ = {
 			isa = XCSwiftPackageProductDependency;
