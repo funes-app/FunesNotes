@@ -1,14 +1,27 @@
 import SwiftUI
 
 struct NoteEditor: View {
+    @Environment(\.colorScheme) private var colorScheme
+
     private var font: UIFont {
         UIFont(name: "AnonymousPro-Regular", size: 18)!
+    }
+    
+    private var theme: String {
+//        colorScheme == .dark ? "monokai" : "gruvbox-light"
+        colorScheme == .dark ? "ir-black" : "gruvbox-light"
+
+    }
+    
+    init(_ text: Binding<String>) {
+        self.text = text
     }
 
     var text: Binding<String>
     var body: some View {
-        let view: TextView = TextView(text)
-            .font(font)
+        let view: TextView = TextView(text,
+                                      font: font,
+                                      theme: theme)
         
         return view
             .keyboardType(.default)
@@ -24,15 +37,31 @@ struct NoteEditor_Previews: PreviewProvider {
 # Headline
 
 ## Subhead
-        
-Here's a _line_ with some **bolded** stuff
 
-~~This should be struck through~~
+This is a regular paragraph with some text in it.  In this sentence, I got really excited and wanted everyone to know about _this thing right here_.
 
-- Item 1
-- Item 2
-- Item 3
+But **this thing** was even more important.
+ 
+This reminds me of the time I was talking to my uncle.  He said something like,
+
+> That one thing my uncle said
+
+If I want a small code block, it looks like `this`.
+
+```
+A big code block looks like this
+```
+
+[Hyperlinks look like this](http://funes.app)
+
+- Here's an item
+- Here's another item
 """
-        NoteEditor(text: .constant(text))
+        Group {
+            NoteEditor(.constant(text))
+                .environment(\.colorScheme, .dark)
+            NoteEditor(.constant(text))
+                .environment(\.colorScheme, .light)
+        }
     }
 }

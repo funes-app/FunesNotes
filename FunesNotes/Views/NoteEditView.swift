@@ -11,7 +11,7 @@ struct NoteEditView: View {
     
     var body: some View {
         VStack {
-            NoteEditor(text: viewModel.text)
+            NoteEditor(viewModel.text)
                 .focused($isTextEditorFocused)
             
             Divider()
