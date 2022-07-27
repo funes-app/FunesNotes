@@ -1306,14 +1306,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		D88C564A2889A1CB0055DB6A /* XCRemoteSwiftPackageReference "Sourceful" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Sourceful";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
-			};
-		};
 		D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Square/Valet";
@@ -1337,7 +1329,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D873E5982885D03C001C8B8A /* XCRemoteSwiftPackageReference "Highlightr" */;
 			productName = Highlightr;
-		};
 		};
 		D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */ = {
 			isa = XCSwiftPackageProductDependency;

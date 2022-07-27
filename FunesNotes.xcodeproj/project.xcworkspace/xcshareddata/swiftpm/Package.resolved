@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "highlightr",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raspu/Highlightr",
+      "state" : {
+        "revision" : "93199b9e434f04bda956a613af8f571933f9f037",
+        "version" : "2.1.2"
+      }
+    },
+    {
       "identity" : "murmurhash-swift",
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:daisuke-t-jp/MurmurHash-Swift.git",
@@ -52,15 +61,6 @@
       "state" : {
         "revision" : "811e810a14b89c2cbf3f510218706e02d1506405",
         "version" : "0.1.1"
-      }
-    },
-    {
-      "identity" : "textview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwiftUI-Plus/TextView.git",
-      "state" : {
-        "revision" : "964843d9d745e9face81622958c787832553d200",
-        "version" : "1.1.0"
       }
     },
     {
