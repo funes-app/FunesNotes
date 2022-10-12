@@ -10,6 +10,7 @@ struct NoteListRowButton: View {
         }) {
             NoteListRow(noteMeta: noteMeta)
         }
+        .buttonStyle(.borderless)
         .foregroundColor(.primary)
         .swipeActions(allowsFullSwipe: false) {
             IconButton("trash", role: .destructive) {
