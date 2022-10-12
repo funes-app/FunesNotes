@@ -5,23 +5,23 @@ import SwiftUI
 struct TextView: UIViewRepresentable {
     @Binding private var text: String
     
-    let notepad: Notepad
+    var theme: Theme.BuiltIn
     
     init(_ text: Binding<String>,
          theme: Theme.BuiltIn = Theme.BuiltIn.OneDark) {
         _text = text
-        
-        notepad = Notepad(frame: .zero, theme: theme)
+        self.theme = theme
     }
     
     func makeUIView(context: Context) -> UITextView {
-        
+        let notepad = Notepad(frame: .zero, theme: theme)
+
         notepad.delegate = context.coordinator
         return notepad
     }
     
     func updateUIView(_ textView: UITextView, context: Context) {
-        notepad.text = text
+        textView.text = text
     }
     
     func makeCoordinator() -> Coordinator {
