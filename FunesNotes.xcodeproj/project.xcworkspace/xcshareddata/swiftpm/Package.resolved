@@ -46,6 +46,15 @@
       }
     },
     {
+      "identity" : "notepad",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:famousj/Notepad.git",
+      "state" : {
+        "revision" : "97b859fbd075d9d3bfc51c294e4a0221e38aea14",
+        "version" : "0.4.0"
+      }
+    },
+    {
       "identity" : "parity",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/famousj/Parity",

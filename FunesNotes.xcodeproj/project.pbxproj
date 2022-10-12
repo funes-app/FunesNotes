@@ -89,6 +89,7 @@
 		D876783D2735CE8700C57FC5 /* NoteContents+TestInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876783C2735CE8700C57FC5 /* NoteContents+TestInstance.swift */; };
 		D876784D2736CB1500C57FC5 /* FakeNoteFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876784C2736CB1500C57FC5 /* FakeNoteFileManager.swift */; };
 		D87FF741274D4E3000389FD5 /* NoteMeta+TestInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87FF740274D4E3000389FD5 /* NoteMeta+TestInstance.swift */; };
+		D88094D028F4C04A00B7B065 /* Notepad in Frameworks */ = {isa = PBXBuildFile; productRef = D88094CF28F4C04A00B7B065 /* Notepad */; };
 		D880E6F927892B9B005FE545 /* NoteSaverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D880E6F827892B9B005FE545 /* NoteSaverTests.swift */; };
 		D880E6FD278A08C5005FE545 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D880E6FC278A08C4005FE545 /* URL+Helpers.swift */; };
 		D880E6FF278A09B7005FE545 /* URLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D880E6FE278A09B7005FE545 /* URLTests.swift */; };
@@ -325,6 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88094D028F4C04A00B7B065 /* Notepad in Frameworks */,
 				D873E59A2885D03D001C8B8A /* Highlightr in Frameworks */,
 				D8DD4342283D0CCD00B932B2 /* Valet in Frameworks */,
 				D8C9ED1627FB29FD00C7A0D6 /* SwiftGraphStore in Frameworks */,
@@ -442,6 +444,7 @@
 		D87677EF273461C300C57FC5 = {
 			isa = PBXGroup;
 			children = (
+				D8B869F828E4A8E3009A9F79 /* Packages */,
 				D87677FA273461C400C57FC5 /* FunesNotes */,
 				D876780B273461CC00C57FC5 /* FunesNotesTests */,
 				D8767815273461CD00C57FC5 /* FunesNotesUITests */,
@@ -627,6 +630,13 @@
 			path = Fakes;
 			sourceTree = "<group>";
 		};
+		D8B869F828E4A8E3009A9F79 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		D8DD4340283D0CCD00B932B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +675,7 @@
 				D8C9ED1727FB29FD00C7A0D6 /* SwiftGraphStoreFakes */,
 				D8DD4341283D0CCD00B932B2 /* Valet */,
 				D873E5992885D03D001C8B8A /* Highlightr */,
+				D88094CF28F4C04A00B7B065 /* Notepad */,
 			);
 			productName = FunesNotes;
 			productReference = D87677F8273461C400C57FC5 /* FunesNotes.app */;
@@ -744,6 +755,7 @@
 				D8C9ED1427FB29FD00C7A0D6 /* XCRemoteSwiftPackageReference "SwiftGraphStore" */,
 				D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */,
 				D873E5982885D03C001C8B8A /* XCRemoteSwiftPackageReference "Highlightr" */,
+				D88094CE28F4C04A00B7B065 /* XCRemoteSwiftPackageReference "Notepad" */,
 			);
 			productRefGroup = D87677F9273461C400C57FC5 /* Products */;
 			projectDirPath = "";
@@ -1306,6 +1318,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D88094CE28F4C04A00B7B065 /* XCRemoteSwiftPackageReference "Notepad" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:famousj/Notepad.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 		D8BE7DE72833BF34008AC2C8 /* XCRemoteSwiftPackageReference "Valet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Square/Valet";
@@ -1329,6 +1349,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D873E5982885D03C001C8B8A /* XCRemoteSwiftPackageReference "Highlightr" */;
 			productName = Highlightr;
+		};
+		D88094CF28F4C04A00B7B065 /* Notepad */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D88094CE28F4C04A00B7B065 /* XCRemoteSwiftPackageReference "Notepad" */;
+			productName = Notepad;
 		};
 		D8C9ED1527FB29FD00C7A0D6 /* SwiftGraphStore */ = {
 			isa = XCSwiftPackageProductDependency;
