@@ -134,10 +134,16 @@ class NoteListViewModel: ObservableObject {
     }
 
     func loadNoteMetas() async {
-        noteMetas = await fileConnector
+        let noteMetas = await fileConnector
             .loadNoteMetas()
             .ordered()
             .nondeleted()
+        await setNoteMetas(noteMetas)
+    }
+    
+    @MainActor
+    private func setNoteMetas(_ noteMetas: [NoteMeta]) {
+        self.noteMetas = noteMetas
     }
     
     func loadLastSelectedNote() {
