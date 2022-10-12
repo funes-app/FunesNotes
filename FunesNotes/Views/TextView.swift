@@ -1,46 +1,27 @@
 import Foundation
+import Notepad
 import SwiftUI
-import Highlightr
 
 struct TextView: UIViewRepresentable {
     @Binding private var text: String
-    private var font: UIFont
     
-    private let highlightr = Highlightr()!
-        
-    private static var defaultFont: UIFont {
-        guard let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
-            .withDesign(.monospaced)
-        else {
-            return .preferredFont(forTextStyle: .body)
-        }
-        
-        return UIFont(descriptor: descriptor, size: 16)
-    }
+    let notepad: Notepad
     
     init(_ text: Binding<String>,
-         font: UIFont = TextView.defaultFont,
-         theme: String = "dark") {
+         theme: Theme.BuiltIn = Theme.BuiltIn.OneDark) {
         _text = text
-        self.font = font
         
-        highlightr.setTheme(to: theme)
+        notepad = Notepad(frame: .zero, theme: theme)
     }
     
     func makeUIView(context: Context) -> UITextView {
-        let textView = UITextView()
-        textView.font = font
-        textView.delegate = context.coordinator
-        return textView
+        
+        notepad.delegate = context.coordinator
+        return notepad
     }
     
     func updateUIView(_ textView: UITextView, context: Context) {
-        guard let highlightedText = highlightr.highlight(text, as: "markdown") else {
-            return
-        }
-        let attributedText = NSMutableAttributedString(attributedString: highlightedText)
-        attributedText.addAttribute(.font, value: font, range: NSRange(location: 0, length: text.count))
-        textView.attributedText = attributedText
+        notepad.text = text
     }
     
     func makeCoordinator() -> Coordinator {
@@ -61,11 +42,3 @@ extension TextView {
         }
     }
 }
-
-//extension TextView {
-//    func font(_ font: UIFont) -> TextView {
-//        var view = self
-//        //        view.font = font
-//        return view
-//    }
-//}

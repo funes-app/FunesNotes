@@ -1,4 +1,5 @@
 import SwiftUI
+import Notepad
 
 struct NoteEditor: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -7,22 +8,21 @@ struct NoteEditor: View {
         UIFont(name: "AnonymousPro-Regular", size: 18)!
     }
     
-    private var theme: String {
-//        colorScheme == .dark ? "monokai" : "gruvbox-light"
-        colorScheme == .dark ? "ir-black" : "gruvbox-light"
-
+    private var theme: Theme.BuiltIn {
+        colorScheme == .dark ?
+        Theme.BuiltIn.OneDark :
+        Theme.BuiltIn.OneLight
     }
+    
+    var text: Binding<String>
     
     init(_ text: Binding<String>) {
         self.text = text
     }
 
-    var text: Binding<String>
     var body: some View {
-        let view: TextView = TextView(text,
-                                      font: font,
-                                      theme: theme)
-        
+        let view: TextView = TextView(text, theme: theme)
+
         return view
             .keyboardType(.default)
             .multilineTextAlignment(.leading)
