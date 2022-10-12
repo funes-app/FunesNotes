@@ -3,15 +3,9 @@ import Notepad
 
 struct NoteEditor: View {
     @Environment(\.colorScheme) private var colorScheme
-
+    
     private var font: UIFont {
         UIFont(name: "AnonymousPro-Regular", size: 18)!
-    }
-    
-    private var theme: Theme.BuiltIn {
-        colorScheme == .dark ?
-        Theme.BuiltIn.OneDark :
-        Theme.BuiltIn.OneLight
     }
     
     var text: Binding<String>
@@ -19,14 +13,13 @@ struct NoteEditor: View {
     init(_ text: Binding<String>) {
         self.text = text
     }
-
+    
     var body: some View {
-        let view: TextView = TextView(text, theme: theme)
-
-        return view
+        TextView(text, colorScheme: colorScheme)
             .keyboardType(.default)
             .multilineTextAlignment(.leading)
             .padding()
+            .id(self.colorScheme)
     }
 }
 

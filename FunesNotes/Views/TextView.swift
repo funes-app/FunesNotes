@@ -4,13 +4,13 @@ import SwiftUI
 
 struct TextView: UIViewRepresentable {
     @Binding private var text: String
-    
-    var theme: Theme.BuiltIn
+        
+    private let theme: Theme.BuiltIn
     
     init(_ text: Binding<String>,
-         theme: Theme.BuiltIn = Theme.BuiltIn.OneDark) {
+         colorScheme: ColorScheme) {
         _text = text
-        self.theme = theme
+        theme = themeForColorScheme(colorScheme)
     }
     
     func makeUIView(context: Context) -> UITextView {
@@ -41,4 +41,10 @@ extension TextView {
             text = textView.text
         }
     }
+}
+
+fileprivate func themeForColorScheme(_ colorScheme: ColorScheme) -> Theme.BuiltIn {
+    colorScheme == .dark ?
+    Theme.BuiltIn.OneDark :
+    Theme.BuiltIn.OneLight
 }
